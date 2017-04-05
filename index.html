@@ -18,110 +18,33 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   
   
-  <style type="text/css" rel="stylesheet">
-    .embed-container {
-position: relative;
-padding-bottom: 46.25%;
-padding-top: 30px;
-height: 0;
-overflow: hidden;
-}
-
-.embed-container iframe,
-.embed-container object,
-.embed-container embed {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-}
-    
-      iframe {
-        width: 1px;
-        min-width: 100%;
-        *width: 100%;
-    }
-    
-    html,body {
-    height:100%;
-}
-.h_iframe iframe {
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-}
-
-#url-wrapper{
-    margin-top: 51px;
-    height: 100%;
-}
-
-#url-wrapper iframe{
-    height: 100%;
-    width: 100%;
-}
-
-#url-wrapper.ios{
-    overflow-y: auto;
-    -webkit-overflow-scrolling:touch !important;
-    height: 100%;
-}
-
-#url-wrapper.ios iframe{
-    height: 100%;
-    min-width: 100%;
-    width: 100px;
-    *width: 100%;
-}
-    
-    .intrinsic-container {
-  position: relative;
-  height: 0;
-  overflow: hidden;
-}
- 
-/* 16x9 Aspect Ratio */
-.intrinsic-container-16x9 {
-  padding-bottom: 56.25%;
-}
- 
-  </style>
-  <script typ="javascript">
-    function create_iframe(){
-
-    var wrapper = jQuery('#url-wrapper');
-
-    if(navigator.userAgent.match(/(iPod|iPhone|iPad)/)){
-        wrapper.addClass('ios');
-        var scrolling = 'no';
-    }else{
-        var scrolling = 'yes';
-    }
-
-    jQuery('<iframe>', {
-        src: "https://app.acuityscheduling.com/schedule.php?owner=13162306",
-        id:  'test',
-        frameborder: 0,
-        scrolling: scrolling
-    }).appendTo(wrapper);
-
-}
-    $( document ).ready(function() {
-      create_iframe();
-});
-  </script>
-</head>
-<body>
-  <!-- 
+ <!-- 
   <div class="h_iframe" id="url-wrapper"></div>
    -->
-
   
+  
+  <style>
+iframe {
+	display: none;
+	width: 100%;
+	height: 600px;
+	border: 0;
+}
+</style>
+</head>
+<body>
+<button>Book Class</button>
+<iframe src="https://app.acuityscheduling.com/schedule.php?owner=13162306"></iframe>
+
+<script>
+document.querySelector("button").addEventListener("click", function() {
+	document.querySelector("iframe").style.display = 'block';
+});
+</script>
+
+<!--  
 <div style="left: 0px; width: 100%; height: 0px; position: relative; padding-bottom: 62.45%;">
 <iframe src="https://app.acuityscheduling.com/schedule.php?owner=13162306"frameborder="0" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" style="top: 0px; left: 0px; width: 100%; height: 100%; position: absolute;"></iframe></div>
-
+-->
 </body>
 </html>
